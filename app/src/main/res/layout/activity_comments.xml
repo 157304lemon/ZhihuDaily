@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="#FEFEFE">
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/tb_comments"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/blue"
+        app:navigationIcon="@drawable/ic_back1">
+    </android.support.v7.widget.Toolbar>
+
+    <android.support.v4.widget.NestedScrollView
+        android:id="@+id/n_scroll_view_comments"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/tb_comments">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="40dp"
+                    android:text="以下共有 "
+                    android:gravity="center_vertical|right"
+                    android:textSize="15sp"
+                    android:textColor="#000"
+                    tools:ignore="HardcodedText,RtlHardcoded" />
+
+                <TextView
+                    android:id="@+id/tv_comment_long_num"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:text="n"
+                    android:gravity="center_vertical"
+                    android:textColor="#000"
+                    android:textSize="15sp"
+                    tools:ignore="HardcodedText" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="40dp"
+                    android:text=" 条长评"
+                    android:gravity="center_vertical"
+                    android:textSize="15sp"
+                    android:textColor="#000"
+                    tools:ignore="HardcodedText" />
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="0.5dp"
+                android:background="#E7E7E7"/>
+
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/rv_long_comments"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+            </android.support.v7.widget.RecyclerView>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="0.5dp"
+                android:background="#E7E7E7" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="40dp"
+                    android:text="以下共有 "
+                    android:gravity="center_vertical|right"
+                    android:textSize="15sp"
+                    android:textColor="#000"
+                    tools:ignore="HardcodedText,RtlHardcoded"/>
+
+
+                <TextView
+                    android:id="@+id/tv_comment_short_num"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:text="n"
+                    android:gravity="center_vertical"
+                    android:textColor="#000"
+                    android:textSize="15sp"
+                    tools:ignore="HardcodedText" />
+
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="40dp"
+                    android:text=" 条短评"
+                    android:gravity="center_vertical"
+                    android:textSize="15sp"
+                    android:textColor="#000"
+                    tools:ignore="HardcodedText" />
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="0.5dp"
+                android:background="#E7E7E7"/>
+
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/rv_short_comments"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+            </android.support.v7.widget.RecyclerView>
+
+
+
+
+        </LinearLayout>
+
+    </android.support.v4.widget.NestedScrollView>
+
+</RelativeLayout>

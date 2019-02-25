@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools">
+    <android.support.design.widget.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="270dp"
+        android:theme="@style/Theme.AppCompat.NoActionBar"
+        android:background="#fff">
+        <android.support.design.widget.CollapsingToolbarLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:expandedTitleMarginBottom="100dp"
+            app:layout_scrollFlags="scroll|enterAlwaysCollapsed|enterAlways">
+
+            <ImageView
+                android:id="@+id/im_article"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:src="@drawable/desktop"
+                android:scaleType="centerCrop"/>
+
+
+            <android.support.v7.widget.Toolbar
+                android:id="@+id/tb_delete"
+                android:layout_width="match_parent"
+                android:layout_height="55dp"
+                android:layout_gravity="top"
+                android:background="@color/blue"
+                app:layout_collapseMode="pin"
+                app:navigationIcon="@drawable/ic_back1">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center">
+
+                    <TextView
+                        android:id="@+id/tv_praise"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:drawableLeft="@drawable/bg_article_tv_parise"
+                        android:gravity="center"
+                        android:text="92"
+                        android:textColor="#fff"
+                        android:textSize="20sp"
+                        android:layout_alignParentEnd="true"
+                        android:drawableStart="@drawable/bg_article_tv_parise"
+                        tools:ignore="HardcodedText" />
+
+                    <TextView
+                        android:id="@+id/tv_comment"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:drawableLeft="@drawable/comment"
+                        android:layout_toLeftOf="@+id/tv_praise"
+                        android:layout_marginRight="10dp"
+                        android:text="25"
+                        android:textColor="#fff"
+                        android:gravity="center"
+                        android:textSize="20sp"
+                        android:drawableStart="@drawable/comment"
+                        android:layout_toStartOf="@+id/tv_praise"
+                        android:layout_marginEnd="10dp"
+                        tools:ignore="HardcodedText" />
+
+                    <ImageView
+                        android:id="@+id/im_favorites"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/favorites"
+                        android:layout_toLeftOf="@+id/tv_comment"
+                        android:layout_marginRight="10dp"
+                        android:layout_toStartOf="@+id/tv_comment"
+                        android:layout_marginEnd="10dp"
+                        tools:ignore="ContentDescription" />
+
+                    <ImageView
+                        android:id="@+id/im_share"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/share"
+                        android:layout_toLeftOf="@+id/im_favorites"
+                        android:layout_marginRight="10dp"
+                        android:layout_toStartOf="@+id/im_favorites"
+                        android:layout_marginEnd="10dp"
+                        tools:ignore="ContentDescription" />
+
+                </RelativeLayout>
+            </android.support.v7.widget.Toolbar>
+        </android.support.design.widget.CollapsingToolbarLayout>
+
+    </android.support.design.widget.AppBarLayout>
+
+    <android.support.v4.widget.NestedScrollView
+        android:id="@+id/n_scroll_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
+        <WebView
+            android:id="@+id/wb"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+        </WebView>
+    </android.support.v4.widget.NestedScrollView>
+</android.support.design.widget.CoordinatorLayout>
