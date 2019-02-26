@@ -43,7 +43,7 @@
             android:id="@+id/et_mylogin_username"
             android:layout_width="match_parent"
             android:layout_height="50dp"
-            android:layout_marginTop="80dp"
+            android:layout_marginTop="120dp"
             android:background="@drawable/bg_register_et"
             android:textColor="#000000"
             android:textSize="16sp"

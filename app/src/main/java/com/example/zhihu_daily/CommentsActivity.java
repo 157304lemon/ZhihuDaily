@@ -43,7 +43,6 @@ public class CommentsActivity extends AppCompatActivity {
             setSupportActionBar(mToolbar);
         mTvCommentLongNum = findViewById(R.id.tv_comment_long_num);
         mTvCommentShortNum = findViewById(R.id.tv_comment_short_num);
-       // getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         getId();
         initdata("https://news-at.zhihu.com/api/4/story/"+id+"/long-comments",dataCommentsLong,replyCommentsLong,LONG);

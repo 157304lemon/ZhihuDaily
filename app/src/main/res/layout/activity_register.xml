@@ -2,6 +2,7 @@
 
 <LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
@@ -42,7 +43,7 @@
             android:id="@+id/et_username"
             android:layout_width="match_parent"
             android:layout_height="50dp"
-            android:layout_marginTop="80dp"
+            android:layout_marginTop="120dp"
             android:background="@drawable/bg_register_et"
             android:textColor="#000000"
             android:textSize="16sp"
@@ -69,7 +70,8 @@
             android:drawablePadding="7dp"
             android:paddingStart="10dp"
             android:drawableStart="@drawable/ic_lock"
-            android:maxLines="1"/>
+            android:maxLines="1"
+            tools:ignore="HardcodedText" />
 
         <Button
             android:id="@+id/btn_register"

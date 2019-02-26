@@ -19,6 +19,7 @@ import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
 import com.example.zhihu_daily.Util.HtmlUtil;
+import com.example.zhihu_daily.Util.ToastUtil;
 import com.example.zhihu_daily.datas.DataGsonForArticle;
 import com.example.zhihu_daily.datastorage.MySharedPreferences;
 import com.example.zhihu_daily.weight.ShareDialog;
@@ -69,14 +70,14 @@ public class ArticleActivity extends AppCompatActivity implements View.OnClickLi
 
         //通过该方法进行每个新闻的独有的id获取
         getId();
-//        if(GetNetConnect.isMobileConnected(mContext)){
-//            //进行网络请求获取文章的具体信息，并进行设置以及使用webview加载html文件
+        if(GetNetConnect.isMobileConnected(mContext)){
+            //进行网络请求获取文章的具体信息，并进行设置以及使用webview加载html文件
             initData();
-//        }else {
-//            ToastUtil.showMsg(mContext,"请检查您的网络连接");
-//            //没有网络时加载本地资源
-//            withoutInternet();
-//        }
+        }else {
+            ToastUtil.showMsg(mContext,"请检查您的网络连接");
+            //没有网络时加载本地资源
+            withoutInternet();
+        }
     }
 
 
@@ -92,8 +93,8 @@ public class ArticleActivity extends AppCompatActivity implements View.OnClickLi
             public void finsh(String response) {
                 context = response;
                 //通过该方法得到新闻的赞、评论数等消息
-//                SPA = new MySharedPreferences("news",id,response,mContext);
-//                SPA.saveData();
+                SPA = new MySharedPreferences("news",id,response,mContext);
+                SPA.saveData();
                getExtraMsg();
             }
         });
@@ -107,8 +108,8 @@ public class ArticleActivity extends AppCompatActivity implements View.OnClickLi
             @Override
             public void finsh(String response) {
                 try {
-//                    SPA = new MySharedPreferences("comment",id,response,mContext);
-//                        SPA.saveData();
+                    SPA = new MySharedPreferences("comment",id,response,mContext);
+                        SPA.saveData();
 
                     //对文章的额外消息的解析
                     JSONObject jsonObject = new JSONObject(response);

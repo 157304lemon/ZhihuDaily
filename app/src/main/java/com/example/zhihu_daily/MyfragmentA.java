@@ -13,9 +13,9 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Toast;
 
 import com.example.zhihu_daily.MyAdapters.RecycerAdapter_main;
+import com.example.zhihu_daily.Util.ToastUtil;
 import com.example.zhihu_daily.datas.DataArticle;
 import com.example.zhihu_daily.datas.DataGson;
 import com.example.zhihu_daily.datas.DataMain;
@@ -75,15 +75,15 @@ public class MyfragmentA extends Fragment {
             mContext = getActivity();
         }
         //判断是否拥有网络连接，进而选择网络加载和本地加载
-//        if(GetNetConnect.isMobileConnected(mContext)){
+        if(GetNetConnect.isMobileConnected(mContext)){
             initData(url);
-//        }else {
-//            ToastUtil.showMsg(mContext,"请检查您的网络连接");
-//            spa = new MySharedPreferences("newsData",data,null,mContext);
-//            if(spa.getData()!=null||spa.getData().equals("")){
-//                handleResponse(spa.getData());
-//            }
-//        }
+        }else {
+            ToastUtil.showMsg(mContext,"请检查您的网络连接");
+            spa = new MySharedPreferences("newsData",data,null,mContext);
+            if(spa.getData()!=null||spa.getData().equals("")){
+                handleResponse(spa.getData());
+            }
+        }
 
         //主页底部视图实现
         mRecyclerView =  view.findViewById(R.id.rv_main);
@@ -111,8 +111,8 @@ public class MyfragmentA extends Fragment {
             @Override
             public void finsh(String response) {
 
-//                spa = new MySharedPreferences("newsData",data,response,mContext);
-//                spa.saveData();
+                spa = new MySharedPreferences("newsData",data,response,mContext);
+                spa.saveData();
                 //处理得到的json数据
                 handleResponse(response);
                 //通知RecyclerView进行改变
