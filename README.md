@@ -24,12 +24,13 @@
 ![comment](https://github.com/157304lemon/ZhihuDaily/blob/master/ExplanatoryPictures/lixian.gif)
 
 5、 注册自己的专属账号（自行实现api）  
-![comment](https://github.com/157304lemon/ZhihuDaily/blob/master/ExplanatoryPictures/register.gif)
+![comment](https://github.com/157304lemon/ZhihuDaily/blob/master/ExplanatoryPictures/register.gif)  
 
-6、 登陆自己的专属账号（自行实现api）  
-![comment](https://github.com/157304lemon/ZhihuDaily/blob/master/ExplanatoryPictures/login.gif)  
+ 登陆自己的专属账号（自行实现api）  
+![comment](https://github.com/157304lemon/ZhihuDaily/blob/master/ExplanatoryPictures/login.gif)    
 
-7、两个小东西，侧滑栏和自定义弹窗   
+
+6、 两个小东西，侧滑栏和自定义弹窗   
 <img src="https://github.com/157304lemon/ZhihuDaily/blob/master/ExplanatoryPictures/cehualan.jpg" width=350 height=750/>
 <img src="https://github.com/157304lemon/ZhihuDaily/blob/master/ExplanatoryPictures/dialog.jpg" width=350 height=750/>
 
@@ -41,6 +42,6 @@
 
 3、评论页面使用NestedScrollview内嵌两个RecyclerView来分别加载长评论与短评论
 
-4、 自行设计后台api。通过tomcat建立我的服务器，再通过ideau设计简单的登陆和注册逻辑，连接我的mysql数据库进行数据存储与登陆的验证，还要使用natapp在公网和本地运行的 Web 服务器之间建立一个安全的通道。
+4、 自行设计后台api。通过tomcat建立我的服务器，再通过ideau设计简单的登陆和注册逻辑，连接我的mysql数据库进行数据存储与登陆的验证，还要使用natapp在公网和本地运行的 Web 服务器之间建立一个安全的通道。（该api的逻辑代码仓库地址https://github.com/157304lemon/Simpleapi.git）
 
 5、 本地缓存的加载，使用的SharedPerenfences轻量级储存实现，通过判断是否有网络连接决定是否加载本地缓存（ps：至少要有一次在有网络的情况下打开过软件才可以有缓存记录）
