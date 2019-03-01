@@ -91,11 +91,21 @@ public class ArticleActivity extends AppCompatActivity implements View.OnClickLi
         getNetConnect.HttpConnect(new GetNetConnect.Callback() {
             @Override
             public void finsh(String response) {
-                context = response;
-                //通过该方法得到新闻的赞、评论数等消息
-                SPA = new MySharedPreferences("news",id,response,mContext);
-                SPA.saveData();
-               getExtraMsg();
+                //设置各种数据
+                setDatas(response);
+                final String message = response;
+
+
+                Handler mainHander = new Handler(Looper.getMainLooper());
+                mainHander.post(new Runnable() {
+                    @Override
+                    public void run() {
+                        SPA = new MySharedPreferences("news",id,message,mContext);
+                        SPA.saveData();
+                    }
+                });
+                //通过该方法进行各种数据设置
+                getExtraMsg();
             }
         });
     }
@@ -108,22 +118,22 @@ public class ArticleActivity extends AppCompatActivity implements View.OnClickLi
             @Override
             public void finsh(String response) {
                 try {
-                    SPA = new MySharedPreferences("comment",id,response,mContext);
-                        SPA.saveData();
+                    final String my = response;
 
                     //对文章的额外消息的解析
                     JSONObject jsonObject = new JSONObject(response);
                     numComments =  jsonObject.getString("comments");
                     numPopularity = jsonObject.getString("popularity");
 
-                    //通过该方法进行各种数据设置
-                    setDatas(context);
 
                     //返回主线程刷新UI
                     Handler mainHander = new Handler(Looper.getMainLooper());
                     mainHander.post(new Runnable() {
                         @Override
                         public void run() {
+                            SPA = new MySharedPreferences("comment",id,my,mContext);
+                            SPA.saveData();
+
                             //加载文章大图
                             Glide.with(mContext).load(imageUrlForArticle).into(mImArticle);
                             useWebview(path);
