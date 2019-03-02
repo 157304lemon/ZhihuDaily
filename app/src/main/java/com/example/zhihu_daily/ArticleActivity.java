@@ -18,8 +18,8 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
-import com.example.zhihu_daily.Util.HtmlUtil;
-import com.example.zhihu_daily.Util.ToastUtil;
+import com.example.zhihu_daily.util.HtmlUtil;
+import com.example.zhihu_daily.util.ToastUtil;
 import com.example.zhihu_daily.datas.DataGsonForArticle;
 import com.example.zhihu_daily.datastorage.MySharedPreferences;
 import com.example.zhihu_daily.weight.ShareDialog;
