@@ -1,4 +1,4 @@
-package com.example.zhihu_daily.MyAdapters;
+package com.example.zhihu_daily.adapters;
 
 import android.content.Context;
 import android.support.annotation.NonNull;

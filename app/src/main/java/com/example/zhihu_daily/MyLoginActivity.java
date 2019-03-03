@@ -10,8 +10,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
 
-import com.example.zhihu_daily.Util.PostNetConnect;
-import com.example.zhihu_daily.Util.ToastUtil;
+import com.example.zhihu_daily.util.ToastUtil;
 /**
  * 该类用于实现本人自己写的api，实现注册功能。
  * 但是，实现该功能需要本地服务器打开时方能使用，故先行注释网络请求部分

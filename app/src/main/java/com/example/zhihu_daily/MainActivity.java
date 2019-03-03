@@ -3,7 +3,6 @@ package com.example.zhihu_daily;
 import android.annotation.SuppressLint;
 
 import java.io.File;
-import java.security.PublicKey;
 import java.text.ParseException;
 import java.util.Date;
 
@@ -24,7 +23,7 @@ import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.example.zhihu_daily.Util.ToastUtil;
+import com.example.zhihu_daily.util.ToastUtil;
 
 import java.text.SimpleDateFormat;
 

@@ -11,7 +11,7 @@ import android.view.MenuItem;
 import android.widget.TextView;
 import android.support.v7.widget.Toolbar;
 
-import com.example.zhihu_daily.MyAdapters.RVAdapterComments;
+import com.example.zhihu_daily.adapters.RVAdapterComments;
 import com.example.zhihu_daily.datas.DataComments;
 import com.example.zhihu_daily.datas.DataGsonForComment;
 import com.google.gson.Gson;

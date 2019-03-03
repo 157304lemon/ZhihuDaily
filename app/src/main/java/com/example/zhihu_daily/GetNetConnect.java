@@ -75,4 +75,17 @@ class GetNetConnect {
         return false;
     }
 
+    public static boolean isWifiConnected(Context context){
+     if(context!=null){
+         ConnectivityManager manager = (ConnectivityManager) context.getSystemService(Context.CONNECTIVITY_SERVICE);
+         NetworkInfo info = manager.getNetworkInfo(ConnectivityManager.TYPE_WIFI);
+         if(info != null){
+             return info.isConnected();
+         }
+     }
+     return false;
+    }
+
+
+
 }

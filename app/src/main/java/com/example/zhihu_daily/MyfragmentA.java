@@ -10,12 +10,13 @@ import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.example.zhihu_daily.MyAdapters.RecycerAdapter_main;
-import com.example.zhihu_daily.Util.ToastUtil;
+import com.example.zhihu_daily.adapters.RecycerAdapter_main;
+import com.example.zhihu_daily.util.ToastUtil;
 import com.example.zhihu_daily.datas.DataArticle;
 import com.example.zhihu_daily.datas.DataGson;
 import com.example.zhihu_daily.datas.DataMain;
@@ -75,7 +76,7 @@ public class MyfragmentA extends Fragment {
             mContext = getActivity();
         }
         //判断是否拥有网络连接，进而选择网络加载和本地加载
-        if(GetNetConnect.isMobileConnected(mContext)){
+        if(GetNetConnect.isMobileConnected(mContext)||GetNetConnect.isWifiConnected(mContext)){
             initData(url);
         }else {
             ToastUtil.showMsg(mContext,"请检查您的网络连接");
@@ -110,16 +111,16 @@ public class MyfragmentA extends Fragment {
         getNetConnect.HttpConnect(new GetNetConnect.Callback() {
             @Override
             public void finsh(String response) {
-
-                spa = new MySharedPreferences("newsData",data,response,mContext);
-                spa.saveData();
-                //处理得到的json数据
+                final String message = response;
                 handleResponse(response);
                 //通知RecyclerView进行改变
                 Handler mainHander = new Handler(Looper.getMainLooper());
                 mainHander.post(new Runnable() {
                     @Override
                     public void run() {
+                        //存储在本地
+                        spa = new MySharedPreferences("newsData",data,message,mContext);
+                        spa.saveData();
                         mRecyclerViewAdapter.notifyDataSetChanged();
                     }
                 });
