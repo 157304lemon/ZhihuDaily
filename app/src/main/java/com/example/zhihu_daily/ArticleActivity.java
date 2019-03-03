@@ -70,7 +70,7 @@ public class ArticleActivity extends AppCompatActivity implements View.OnClickLi
 
         //通过该方法进行每个新闻的独有的id获取
         getId();
-        if(GetNetConnect.isMobileConnected(mContext)){
+        if(GetNetConnect.isMobileConnected(mContext)||GetNetConnect.isWifiConnected(mContext)){
             //进行网络请求获取文章的具体信息，并进行设置以及使用webview加载html文件
             initData();
         }else {

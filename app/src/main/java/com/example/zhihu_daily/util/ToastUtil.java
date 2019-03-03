@@ -1,4 +1,4 @@
-package com.example.zhihu_daily.Util;
+package com.example.zhihu_daily.util;
 
 import android.content.Context;
 import android.widget.Toast;

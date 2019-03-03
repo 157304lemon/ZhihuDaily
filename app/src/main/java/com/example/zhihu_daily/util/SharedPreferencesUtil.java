@@ -1,4 +1,4 @@
-package com.example.zhihu_daily.Util;
+package com.example.zhihu_daily.util;
 
 import android.annotation.SuppressLint;
 import android.content.Context;
