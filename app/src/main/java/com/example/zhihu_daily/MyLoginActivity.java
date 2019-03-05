@@ -34,7 +34,7 @@ public class MyLoginActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 if(!mEtPassword.getText().toString().isEmpty()&&!mEtUsername.getText().toString().isEmpty()){
-                    //执行登陆活动
+                    //当EditorText不为空时执行登陆活动
                     String username = mEtUsername.getText().toString();
                     String password = mEtPassword.getText().toString();
                     GetNetConnect connect = new GetNetConnect("http://irving.natapp1.cc/testIdeau_war_exploded/login?sign=login&username="+username+"&password="+password);

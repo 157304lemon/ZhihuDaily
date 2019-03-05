@@ -43,13 +43,13 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         //每次运行前检查缓存文件夹，当缓存过多，自动清除
         @SuppressLint("SdCardPath")
         File file = new File("/data/data/com.example.zhihu_daily/shared_prefs");
-        checkSharedPreferences(file);
+        checkStorage(file);
         isDelete(file);
         Button mBtnSearch = findViewById(R.id.btn_search);
         mTvDate = findViewById(R.id.tv_date);
         final EditText mEtHistory = findViewById(R.id.et_history);
 
-        //设置Toolbar，并设置图标
+        //设置Toolbar，并设置menu图标
         Toolbar mToolbar = findViewById(R.id.tb_main);
         setSupportActionBar(mToolbar);
         ActionBar actionBar = getSupportActionBar();
@@ -94,7 +94,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 if(!data.equals("")){
                     dataValue = Integer.parseInt(data);
                 }
-                //testDate算法检测输入的日期是否正确
+                //testDate算法用于检测输入的日期是否正确
                     if(!testDate(data)||dataValue<20130520){
                         ToastUtil.showMsg(MainActivity.this,"请重新输入正确的日期");
                     } else {
@@ -128,9 +128,11 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     public void onClick(View v) {
         switch (v.getId()){
             case R.id.im_avatar:
+                //点击侧滑栏的用户头像跳转
                 Intent intent = new Intent(MainActivity.this,LogInActivity.class);
                 startActivity(intent);
                 break;
+                //点击textview“请登录”进行跳转
             case R.id.tv_header_signin:
                 Intent intent1 = new Intent(MainActivity.this,LogInActivity.class);
                 startActivity(intent1);
@@ -152,11 +154,11 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         return translationFlag;
     }
 
-    private void checkSharedPreferences(File file) {
+    private void checkStorage(File file) {
         if (file.isDirectory()) {
             File[] files = file.listFiles();
             for (File temp : files) {
-                checkSharedPreferences(temp);
+                checkStorage(temp);
             }
         } else {
             length += file.length();

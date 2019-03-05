@@ -5,6 +5,10 @@ import android.content.SharedPreferences;
 
 import static android.content.Context.MODE_PRIVATE;
 
+/**
+ * 设计初衷只是为了适应特定的储存
+ */
+
 public class MySharedPreferences {
 
     private String mName;

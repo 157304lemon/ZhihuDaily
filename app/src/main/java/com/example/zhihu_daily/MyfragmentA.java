@@ -111,6 +111,7 @@ public class MyfragmentA extends Fragment {
         getNetConnect.HttpConnect(new GetNetConnect.Callback() {
             @Override
             public void finsh(String response) {
+                //该变量的定义是为了方便SP储存
                 final String message = response;
                 handleResponse(response);
                 //通知RecyclerView进行改变

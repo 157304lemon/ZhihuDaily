@@ -28,7 +28,7 @@ public class ShareDialog extends Dialog {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.layou_share_dialog);
-        //设置宽度
+        //设置dialog宽度
         WindowManager m = getWindow().getWindowManager();
         Display d = m.getDefaultDisplay();
         WindowManager.LayoutParams p = getWindow().getAttributes();
@@ -36,7 +36,7 @@ public class ShareDialog extends Dialog {
         d.getSize(size);
         p.width = (int)(size.x*0.9);//设置dialog的宽度为屏幕的宽度的90%；
         getWindow().setAttributes(p);
-
+        //以下实例目前并未使用
         mTvSina = findViewById(R.id.tv_share_sina);
         mTvWeChat = findViewById(R.id.tv_share_wechat);
         mTvFriends = findViewById(R.id.tv_share_frinds);

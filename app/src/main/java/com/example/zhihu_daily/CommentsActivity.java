@@ -43,11 +43,10 @@ public class CommentsActivity extends AppCompatActivity {
             setSupportActionBar(mToolbar);
         mTvCommentLongNum = findViewById(R.id.tv_comment_long_num);
         mTvCommentShortNum = findViewById(R.id.tv_comment_short_num);
-
+        //该方法用于得到文章的id，后面通过文章的id获取相应的评论
         getId();
         initdata("https://news-at.zhihu.com/api/4/story/"+id+"/long-comments",dataCommentsLong,replyCommentsLong,LONG);
         initdata("https://news-at.zhihu.com/api/4/story/"+id+"/short-comments",dataCommentsShort,replyCommentsShort,SHORT);
-
 
         //长评RecyclerView设置
         recyclerViewLong = findViewById(R.id.rv_long_comments);
@@ -93,10 +92,11 @@ public class CommentsActivity extends AppCompatActivity {
                  String content = commentsBean.getReply_to().getContent();
                  String name = commentsBean.getReply_to().getAuthor();
                  DataComments data2 = new DataComments(name,content);
-                replyComments.add(data2);
+                 replyComments.add(data2);
             }else {
-                DataComments data2 = new DataComments("","");
-                replyComments.add(data2);
+                //为了方便后面操作，所以设置当请求的数据中没有评论时，添加评论为空
+                 DataComments data2 = new DataComments("","");
+                 replyComments.add(data2);
             }
             dataComments.add(data1);
         }

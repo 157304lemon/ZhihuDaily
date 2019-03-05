@@ -10,7 +10,7 @@ import java.io.OutputStream;
 
 /**
  *
- * 本类为长期储存与下载后长期保存服务
+ * 本类为长期储存与下载后长期保存服务，目前并未使用
  */
 public class SrgToPathUtil {
 
